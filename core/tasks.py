@@ -1,10 +1,10 @@
-# 📁 core/tasks.py
-
-# 📁 core/tasks.py
+# 📁 core/tasks.py 
 
 import datetime
 import logging
+import os
 from core.voice import speak
+from core.ai import ask_jarvis   # ⚡ AI aggregator import
 
 logging.basicConfig(
     filename="jarvis.log",
@@ -80,7 +80,17 @@ def execute_command(command, tts_engine=None):
             speak(tts_engine, "System shutting down. Goodbye.")
         return False
 
-    # Default fallback
+    # Default fallback → AI Aggregator
     if tts_engine:
-        speak(tts_engine, "Mujhe samajh nahi aaya.")
+        speak(tts_engine, "Ye command samajh nahi aayi. Main AI experts se poochta hoon...")
+        response = ask_jarvis(cmd)
+
+        # Console pe sab AI ke answers
+        print("🔹 AI Raw Replies:")
+        for source, reply in response["all"].items():
+            print(f"{source}: {reply}\n")
+
+        # Final merged reply
+        best_reply = response["final"]
+        speak(tts_engine, f"Merged answer: {best_reply}")
     return True

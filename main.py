@@ -1,7 +1,5 @@
 # 📁 main.py
 
-# 📁 main.py
-
 from core.voice import init_tts, speak, wait_for_wake_word, listen
 from core.tasks import execute_command, auto_wish
 import schedule
