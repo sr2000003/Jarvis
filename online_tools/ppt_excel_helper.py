@@ -1,0 +1,1 @@
+# Placeholder for GPT + pywin32 based automation

@@ -1,0 +1,1 @@
+# Placeholder for Google Calendar API integration
