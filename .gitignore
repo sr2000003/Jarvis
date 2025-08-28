@@ -1,3 +1,31 @@
+# -------------------------
+# Python Cache & Build Files
+# -------------------------
 __pycache__/
-.env
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.egg-info/
+dist/
+build/
+
+# -------------------------
+# Logs
+# -------------------------
 logs/
+*.log
+
+# -------------------------
+# Environment Variables
+# -------------------------
+.env
+.env.local
+*.env
+
+# -------------------------
+# System Files (Windows + Mac)
+# -------------------------
+Thumbs.db
+.DS_Store
